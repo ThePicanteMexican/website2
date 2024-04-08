@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catch the Insect</title>
+        <link rel="stylesheet" href="css/insect.css">
+    </head>
+
+    <body>
+        <div class = "screen">
+            <h1>Catch the Insect</h1>
+            <button class="btn" id="start-btn">Start</button>
+        </div>
+
+        <div class="screen">
+            <h1>What is your favorite insect?</h1>
+            <ul class="insects-list">
+                <li>
+                    <button class="choose-insect-btn">
+                        <p>Caterpiller</p>
+                        <img src="css/images/caterpiller.png">
+                    </button>
+                </li>
+
+                <li>
+                    <button class="choose-insect-btn">
+                        <p>Worm</p>
+                        <img src="css/images/worm.png">
+                    </button>
+                </li>
+
+                <li>
+                    <button class="choose-insect-btn">
+                        <p>Ant</p>
+                        <img src="css/images/ant.png">
+                    </button>
+                </li>
+                     
+                <li>
+                    <button class="choose-insect-btn">
+                    <p>Spidder</p>
+                    <img src="css/images/spidder.png">
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="screen game-container" id="game-conta">
+            <h3 class="time" id = "time">Time: 00:00</h3>
+            <h3 id="score" class="score">Score: 0</h3>
+            <h5 class = "message" id = "message">
+                Are you annoyed yet?
+            </h5>
+        </div>
+    </body>
+
+<script src="js/insect.js"></script>
+</html>
