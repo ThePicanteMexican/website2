@@ -2,10 +2,15 @@ rulesBtn = document.getElementById('rules-btn')
 rules = document.getElementById('rules')
 closeBtn = document.getElementById('close-btn')
 canvas = document.getElementById('canvas')
+startReplayBtn = document.getElementById('start-replay-btn');
 ctx = canvas.getContext('2d')
 score = 0
 brickRowCount = 9
 brickColumnCount = 5
+gameOver = false;
+hasBeenCalled = false;
+gameStarted = false;
+
 
 // Create ball properties
 ball = {
@@ -162,6 +167,10 @@ function moveBall() {
         ball.dy = -ball.speed
     }
 
+    if(score == 45){
+        ball.speed = 0
+    }
+
     // Brick Collision
     bricks.forEach(column => {
         column.forEach(brick => {
@@ -201,26 +210,64 @@ function showAllBricks() {
 
 
 // Update canvas drawing and animation
-function update(){
-    moveBall()
-    movePaddle()
-    draw()
-    requestAnimationFrame(update)
+function update() {
+    moveBall();
+    movePaddle();
+    draw();
+    requestAnimationFrame(update);
 }
 
-// Don't let the game play until a click occurs
-let hasBeenCalled = false
-window.addEventListener('click', () => {
-    if(!hasBeenCalled){
-        update()
-        hasBeenCalled = true
+
+startReplayBtn.addEventListener('click', () => {
+    if (gameOver) {
+        resetGame();
+        startGame();
+    } else if (!hasBeenCalled && !gameStarted) {
+        startGame();
     }
-    else{
-        cocnsole.log('Function Worked')
+    else if(gameStarted){
+        popup.innerText = 'Game In Session';
     }
-})
+});
+
+function resetGame() {
+
+    // Reset the ball, paddle, and bricks
+    ball = {
+        x: canvas.width / 2,
+        y: canvas.height / 2,
+        size: 10,
+        speed: 4,
+        dx: 4,
+        dy: -4,
+    };
+    paddle = {
+        x: canvas.width / 2 - 40,
+        y: canvas.height - 20,
+        w: 80,
+        h: 10,
+        speed: 5,
+        dx: 0,
+    };
+    showAllBricks();
+        // Reset the game state
+        score = 0;
+        seconds = 0;
+        gameOver = false;
+        hasBeenCalled = false;
+}
 
 
+function startGame() {
+    hasBeenCalled = true;
+    gameStarted = true;
+    startReplayBtn.innerText = 'Replay';
+    update();
+}
+
+function endGame() {
+    gameOver = true;
+}
 
 
 // Rules open and close

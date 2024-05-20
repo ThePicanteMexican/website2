@@ -1,3 +1,53 @@
-body{
-    cursor: url('images/cursor.png'), pointer;
+.title {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    height: 70px; 
+    background-color: mediumaquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-family: "Lora", serif;
+    font-weight: bolder;
+    size: 50px;
+}
+
+
+.header {
+    background-color: plum;
+    position: fixed;
+    top: 70;
+    right: 0;
+    left: 0;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.header.link {
+    size: 100px;
+}
+
+.ad{
+    position: fixed;
+    bottom: 15;
+    left: 140;
+}
+
+#closeButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0px 5px;
+}
+
+.hide {
+    display: none;
 }

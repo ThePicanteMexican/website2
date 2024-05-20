@@ -9,17 +9,21 @@
     </head>
 
     <body>
+        <a href = "https://thepicantemexican.github.io/website2/">
+            <button class = "home-btn">Home</button>
+        </a>
+
         <div class = "screen">
             <h1>Catch the Insect</h1>
             <button class="btn" id="start-btn">Start</button>
         </div>
 
-        <div class="screen">
+        <div class = "screen">
             <h1>What is your favorite insect?</h1>
             <ul class="insects-list">
                 <li>
                     <button class="choose-insect-btn">
-                        <p>Caterpiller</p>
+                        <p>Caterpiler</p>
                         <img src="css/images/caterpiller.png">
                     </button>
                 </li>
@@ -47,13 +51,21 @@
             </ul>
         </div>
 
-        <div class="screen game-container" id="game-conta">
+        <div class="screen game-container" id="game-container">
             <h3 class="time" id = "time">Time: 00:00</h3>
             <h3 id="score" class="score">Score: 0</h3>
             <h5 class = "message" id = "message">
-                Are you annoyed yet?
+                Are You Annoyed Yet? Good lmfao
             </h5>
         </div>
+
+        <div id="popup-container">
+            <div class="popup">
+                <h2 id="final-message"></h2>
+            </div>
+        </div>
+        
+
     </body>
 
 <script src="js/insect.js"></script>
